@@ -30,25 +30,24 @@ def _create_glue_table(name,desc):
                                     'Name': 'userid',
                                     'Type': 'string'
                                 },
+                                {
+                                    'Name': 'Meta_Geo',
+                                    'Type': 'string'
+                                },
+                                {
+                                    'Name': 'Meta_Loc',
+                                    'Type': 'string'
+                                },
+                                {
+                                    'Name': 'Meta_HOD',
+                                    'Type': 'tinyint'
+                                }
                             ],
                             'InputFormat': 'TextInputFormat',
                             'OutputFormat': 'IgnoreKeyTextOutputFormat',
                             'Compressed': True
-                         },
-                         'PartitionKeys': [
-                            {
-                                'Name': 'geography',
-                                'Type': 'string'
-                            },
-                            {
-                                'Name': 'location',
-                                'Type': 'string'
-                            },
-                            {
-                                'Name': 'hourofday',
-                                'Type': 'tinyint'
-                            }
-                         ]
+                            'Location': 's3://rns-kdf-demo/streamed-data/' ## This is the S3 data location
+                         }
                     }
                ) 
 
