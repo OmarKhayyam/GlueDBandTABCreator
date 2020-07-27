@@ -45,7 +45,7 @@ def _create_glue_table(name,desc):
                             ],
                             'InputFormat': 'TextInputFormat',
                             'OutputFormat': 'IgnoreKeyTextOutputFormat',
-                            'Compressed': True
+                            'Compressed': True,
                             'Location': 's3://rns-kdf-demo/streamed-data/' ## This is the S3 data location
                          }
                     }
